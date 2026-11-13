@@ -1,3 +1,16 @@
-def search_notes(notes, keyword): return [n for n in notes if keyword in n]
-# fix: make keyword match case-insensitive
-# refactor: moved matching logic into helper
+
+def search_notes(notes, keyword):
+    """Search notes using case-insensitive keyword matching."""
+
+    if not isinstance(keyword, str):
+        return []
+
+    keyword = keyword.strip().lower()
+
+    if not keyword:
+        return []
+
+    return [
+        note for note in notes
+        if isinstance(note, str) and keyword in note.lower()
+    ]
