@@ -1,6 +1,6 @@
 
 def search_notes(notes, keyword):
-    """Search notes using case-insensitive keyword matching."""
+    """Return the notes that contain the keyword, ignoring case and surrounding spaces."""
 
     if not isinstance(keyword, str):
         return []
